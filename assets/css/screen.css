@@ -1,0 +1,19 @@
+/* ----------------- BODY ----------------- */
+body {
+	background: rgb(25, 6, 41);
+	color: rgb(77, 157, 218);
+	font-weight: lighter;
+	line-height: 1.6;
+}
+
+.section-intro {
+	border-bottom: 5px solid rgb(77, 157, 218);
+	height: 400px;
+}
+
+.intro-content {
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -10%);
+	top: 10%;
+}
