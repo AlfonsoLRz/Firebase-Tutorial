@@ -1,4 +1,9 @@
 /* ----------------- BODY ----------------- */
+
+.alert {
+	display: none;
+}
+
 body {
 	background: rgb(25, 6, 41);
 	color: rgb(77, 157, 218);
@@ -6,9 +11,16 @@ body {
 	line-height: 1.6;
 }
 
-.section-intro {
-	border-bottom: 5px solid rgb(77, 157, 218);
-	height: 400px;
+.card {
+	color: black;
+}
+
+hr {
+	border-color: rgb(77, 157, 218);
+}
+
+.insert-section, .two-way-binding {
+	color: white;
 }
 
 .intro-content {
@@ -16,4 +28,10 @@ body {
 	position: absolute;
 	transform: translate(-50%, -10%);
 	top: 10%;
+	z-index:-1;
+}
+
+.section-intro {
+	border-bottom: 2px solid rgb(77, 157, 218);
+	height: 350px;
 }

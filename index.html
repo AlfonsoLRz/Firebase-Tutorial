@@ -7,16 +7,134 @@
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 	<link rel="stylesheet" href="./assets/css/screen.css">
+	
+	<!-- Font awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 </head>
 
 <body>
 	<!-- Intro section -->
-	<div id="particles-js" class="row justify-content-center pb-5 section-intro">
+	<div id="particles-js" class="row justify-content-center section-intro">
 		<div class="col-10 text-center intro-content">
 			<h1> <small> TRYING OUT FIREBASE </small> </h1>
 			<p> Web based technologies - Homework </p>
 			
 			<img src="./assets/images/firebase.svg" width="150em">
+		</div>
+	</div>
+	
+	<div class="row justify-content-center insert-section mt-5 mb-5">
+		<div class="col-10 col-md-7 col-xl-6 text-center">
+			<h2> <small> Insert a new user </small> </h2>
+			<p class="small pb-3"> We'll insert users composed by a name, an username and an email. </p>
+			
+			<!-- Form -->
+			<form>				
+				<!-- Username -->
+				<div class="form-group">
+					<input type="text" class="form-control" id="inputUsername" placeholder="Username">
+				</div>
+				
+				<!-- Name -->
+				<div class="form-row mb-3">
+					<div class="col">
+						<input type="text" class="form-control" id="inputName" placeholder="First name">
+					</div>
+					<div class="col">
+						<input type="text" class="form-control" id="inputLastName" placeholder="Last name">
+					</div>
+				</div>
+				
+				<!-- Email -->
+				<div class="form-group mb-4">
+					<input type="email" class="form-control" id="inputEmail" placeholder="Email">
+				</div>
+				
+				<!-- Error message -->
+				<div class="alert alert-danger" role="alert">
+					<strong>Ooops!</strong> <span id="errorCreateUser"> You should check in on some of those fields below. </span>
+				</div>
+				
+				<div class="border-top pt-5">
+					<button id="createUser" class="btn btn-primary"> Create user </button>
+				</div>
+			</form>
+		</div>
+	</div>
+		
+	<hr>
+	
+	<!-- Container of users cards -->
+	<div class="row justify-content-center two-way-binding mt-5 mb-5">
+		<div class="col-10 text-center">
+			<h2> <small> - Users in the database -  </small> </h2>
+			<p class="small pb-3"> When we add or update users in the model, the UI is updated too. </p>
+			
+			<div id="userContainer" class="row justify-content-center">
+				
+			</div>
+		</div>
+	</div>
+	
+	<hr>
+	
+	<div class="row justify-content-center insert-section mt-5 mb-5">
+		<div class="col-10 col-md-7 col-xl-6 text-center">
+			<h2> <small> Update an user </small> </h2>
+			<p class="small pb-3"> We can update the information of a certain user. </p>
+			
+			<!-- Form -->
+			<form>				
+				<!-- Username -->
+				<div class="form-group">
+					<input type="text" class="form-control" id="inputNewUsername" placeholder="Username">
+				</div>
+				
+				<!-- Name -->
+				<div class="form-row mb-3">
+					<div class="col">
+						<input type="text" class="form-control" id="inputNewName" placeholder="First name">
+					</div>
+					<div class="col">
+						<input type="text" class="form-control" id="inputNewLastName" placeholder="Last name">
+					</div>
+				</div>
+				
+				<!-- Email -->
+				<div class="form-group">
+					<input type="email" class="form-control" id="inputNewEmail" placeholder="Email">
+				</div>
+				
+				<!-- Error message -->
+				<div class="alert alert-danger" role="alert">
+					<strong>Ooops!</strong> <span id="errorUpdateUser"> You should check in on some of those fields below. </span>
+				</div>
+				
+				<div class="border-top pt-5">
+					<button id="updateUser" class="btn btn-primary"> Update user </button>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<hr>
+	
+	<div class="row justify-content-center two-way-binding mt-5 mb-5">
+		<div class="col-10 text-center">
+			<h2> <small> Two way binding </small> </h2>
+			<p class="small pb-3"> When properties in the model get updated, so does the UI. When UI elements get updated, the changes get propagated back to the model. </p>
+			
+			<!-- Rating example -->
+			<p> 
+				<i class="far fa-star fa-2x"></i>
+				<i class="far fa-star fa-2x"></i>
+				<i class="far fa-star fa-2x"></i>
+				<i class="far fa-star fa-2x"></i>
+				<i class="far fa-star fa-2x"></i>
+			</p>
+			
+			<!-- Average and number of people who voted -->
+			<p class="small"> Average: <span id="average"> 4 </span> ( <span id="votes"> 10 </span> ) </p>
 		</div>
 	</div>
 	
@@ -29,5 +147,14 @@
 	<!-- Particles library -->
 	<script src="./assets/js/particles.js"></script>
 	<script src="./assets/js/app.js"></script>
+	
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<!-- Firebase -->
+	<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+	
+	<!-- My JS file. It's necessary to be declared after the configuration of the database -->
+	<script src="./assets/js/screen.js"></script>
 </body>
 </html>
