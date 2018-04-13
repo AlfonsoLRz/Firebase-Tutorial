@@ -17,58 +17,72 @@
 	<div id="particles-js" class="row justify-content-center section-intro">
 		<div class="col-10 text-center intro-content">
 			<h1> <small> TRYING OUT FIREBASE </small> </h1>
-			<p> Web based technologies - Homework </p>
+			<p class="mb-0"> Web based technologies </p>
+			<p> Homework </p>
 			
 			<img src="./assets/images/firebase.svg" width="150em">
 		</div>
 	</div>
 	
-	<div class="row justify-content-center insert-section mt-5 mb-5">
-		<div class="col-10 col-md-7 col-xl-6 text-center">
-			<h2> <small> Insert a new user </small> </h2>
-			<p class="small pb-3"> We'll insert users composed by a name, an username and an email. </p>
-			
-			<!-- Form -->
-			<form>				
-				<!-- Username -->
-				<div class="form-group">
-					<input type="text" class="form-control" id="inputUsername" placeholder="Username">
-				</div>
+	<p class="text-center mt-3">
+		<a data-toggle="collapse" href="#divInsertUser" role="button" aria-expanded="false" aria-controls="divInsertUser">
+			<i class="fas fa-chevron-up fa-2x"></i>
+		</a>
+	</p>
+	
+	<div id="divInsertUser" class="collapse show">
+		<div class="row justify-content-center insert-section">
+			<div class="col-10 col-md-7 col-xl-5 text-center">
+				<h2> <small> Insert a new user </small> </h2>
+				<p class="small pb-3"> We'll insert users composed by a name, an unique username and an email. </p>
 				
-				<!-- Name -->
-				<div class="form-row mb-3">
-					<div class="col">
-						<input type="text" class="form-control" id="inputName" placeholder="First name">
+				<!-- Form -->
+				<form>				
+					<!-- Username -->
+					<div class="form-group">
+						<input type="text" class="form-control" id="inputUsername" placeholder="Username">
 					</div>
-					<div class="col">
-						<input type="text" class="form-control" id="inputLastName" placeholder="Last name">
+					
+					<!-- Name -->
+					<div class="form-row mb-3">
+						<div class="col">
+							<input type="text" class="form-control" id="inputName" placeholder="First name">
+						</div>
+						<div class="col">
+							<input type="text" class="form-control" id="inputLastName" placeholder="Last name">
+						</div>
 					</div>
-				</div>
-				
-				<!-- Email -->
-				<div class="form-group mb-4">
-					<input type="email" class="form-control" id="inputEmail" placeholder="Email">
-				</div>
-				
-				<!-- Error message -->
-				<div class="alert alert-danger" role="alert">
-					<strong>Ooops!</strong> <span id="errorCreateUser"> You should check in on some of those fields below. </span>
-				</div>
-				
-				<div class="border-top pt-5">
-					<button id="createUser" class="btn btn-primary"> Create user </button>
-				</div>
-			</form>
+					
+					<!-- Email -->
+					<div class="form-group mb-4">
+						<input type="email" class="form-control" id="inputEmail" placeholder="Email">
+					</div>
+					
+					<!-- Error message -->
+					<div class="alert alert-danger" role="alert">
+						<strong>Ooops!</strong> <span id="errorCreateUser"> You should check in on some of those fields below. </span>
+					</div>
+					
+					<div class="border-top pt-3 pb-4">
+						<button id="createUser" class="btn btn-primary"> Create user </button>
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
-		
-	<hr>
+	
+	<!-- Border -->			
+	<div class="row justify-content-center">
+		<div class="col-6 border-div">
+			
+		</div>
+	</div>
 	
 	<!-- Container of users cards -->
-	<div class="row justify-content-center two-way-binding mt-5 mb-5">
+	<div class="row justify-content-center users-div mt-3 pb-5">
 		<div class="col-10 text-center">
 			<h2> <small> - Users in the database -  </small> </h2>
-			<p class="small pb-3"> When we add or update users in the model, the UI is updated too. </p>
+			<p class="small pb-2"> When we add or update users in the model, the UI is updated too. </p>
 			
 			<div id="userContainer" class="row justify-content-center">
 				
@@ -76,65 +90,96 @@
 		</div>
 	</div>
 	
-	<hr>
-	
-	<div class="row justify-content-center insert-section mt-5 mb-5">
-		<div class="col-10 col-md-7 col-xl-6 text-center">
-			<h2> <small> Update an user </small> </h2>
-			<p class="small pb-3"> We can update the information of a certain user. </p>
+	<!-- Border -->			
+	<div class="row justify-content-center">
+		<div class="col-6 border-div">
 			
-			<!-- Form -->
-			<form>				
-				<!-- Username -->
-				<div class="form-group">
-					<input type="text" class="form-control" id="inputNewUsername" placeholder="Username">
-				</div>
-				
-				<!-- Name -->
-				<div class="form-row mb-3">
-					<div class="col">
-						<input type="text" class="form-control" id="inputNewName" placeholder="First name">
-					</div>
-					<div class="col">
-						<input type="text" class="form-control" id="inputNewLastName" placeholder="Last name">
-					</div>
-				</div>
-				
-				<!-- Email -->
-				<div class="form-group">
-					<input type="email" class="form-control" id="inputNewEmail" placeholder="Email">
-				</div>
-				
-				<!-- Error message -->
-				<div class="alert alert-danger" role="alert">
-					<strong>Ooops!</strong> <span id="errorUpdateUser"> You should check in on some of those fields below. </span>
-				</div>
-				
-				<div class="border-top pt-5">
-					<button id="updateUser" class="btn btn-primary"> Update user </button>
-				</div>
-			</form>
 		</div>
 	</div>
 	
-	<hr>
+	<p class="text-center mt-3">
+		<a data-toggle="collapse" href="#divUpdateUser" role="button" aria-expanded="false" aria-controls="divUpdateUser">
+			<i class="fas fa-chevron-up fa-2x"></i>
+		</a>
+	</p>
 	
-	<div class="row justify-content-center two-way-binding mt-5 mb-5">
-		<div class="col-10 text-center">
-			<h2> <small> Two way binding </small> </h2>
-			<p class="small pb-3"> When properties in the model get updated, so does the UI. When UI elements get updated, the changes get propagated back to the model. </p>
+	<div id="divUpdateUser" class="collapse show">
+		<div class="row justify-content-center update-section">
+			<div class="col-10 col-md-7 col-xl-5 text-center">
+				<h2> <small> Update an user </small> </h2>
+				<p class="small pb-3"> We can update the information of a certain user. </p>
+				
+				<!-- Form -->
+				<form>				
+					<!-- Username -->
+					<div class="form-group">
+						<input type="text" class="form-control" id="inputNewUsername" placeholder="Username">
+					</div>
+					
+					<!-- Name -->
+					<div class="form-row mb-3">
+						<div class="col">
+							<input type="text" class="form-control" id="inputNewName" placeholder="First name">
+						</div>
+						<div class="col">
+							<input type="text" class="form-control" id="inputNewLastName" placeholder="Last name">
+						</div>
+					</div>
+					
+					<!-- Email -->
+					<div class="form-group">
+						<input type="email" class="form-control" id="inputNewEmail" placeholder="Email">
+					</div>
+					
+					<!-- Error message -->
+					<div class="alert alert-danger" role="alert">
+						<strong>Ooops!</strong> <span id="errorUpdateUser"> You should check in on some of those fields below. </span>
+					</div>
+					
+					<div class="border-top pt-3 pb-4">
+						<button id="updateUser" class="btn btn-primary"> Update user </button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Border -->			
+	<div class="row justify-content-center">
+		<div class="col-6 border-div">
 			
-			<!-- Rating example -->
-			<p> 
-				<i class="far fa-star fa-2x"></i>
-				<i class="far fa-star fa-2x"></i>
-				<i class="far fa-star fa-2x"></i>
-				<i class="far fa-star fa-2x"></i>
-				<i class="far fa-star fa-2x"></i>
-			</p>
-			
-			<!-- Average and number of people who voted -->
-			<p class="small"> Average: <span id="average"> 4 </span> ( <span id="votes"> 10 </span> ) </p>
+		</div>
+	</div>
+	
+	<p class="text-center mt-3">
+		<a data-toggle="collapse" href="#divRemoveUser" role="button" aria-expanded="false" aria-controls="divUpdateUser">
+			<i class="fas fa-chevron-up fa-2x"></i>
+		</a>
+	</p>
+	
+	<div id="divRemoveUser" class="collapse show">
+		<div class="row justify-content-center remove-section">
+			<div class="col-10 col-md-7 col-xl-5 text-center">
+				<h2> <small> Delete an user </small> </h2>
+				<p class="small pb-3"> Try to delete an existing user typing his username. </p>
+				
+				<!-- Form -->
+				<form>				
+					<!-- Username -->
+					<div class="form-group">
+						<input type="text" class="form-control" id="inputCurrentUsername" placeholder="Username">
+					</div>
+					
+					<!-- Error message -->
+					<div class="alert alert-danger" role="alert">
+						<strong>Ooops!</strong> <span id="errorDeleteUser"> You should check in on some of those fields below. </span>
+					</div>
+					
+					<div class="border-top pt-3 pb-4">
+						<button id="removeUser" class="btn btn-primary"> Remove user </button>
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
 	

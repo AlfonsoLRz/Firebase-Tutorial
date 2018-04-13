@@ -11,6 +11,10 @@ body {
 	line-height: 1.6;
 }
 
+.border-div {
+	border-bottom: solid rgb(77, 157, 218) 1px;
+}
+
 .card {
 	color: black;
 }
@@ -19,7 +23,7 @@ hr {
 	border-color: rgb(77, 157, 218);
 }
 
-.insert-section, .two-way-binding {
+.insert-section, .update-section, .users-div, .remove-section {
 	color: white;
 }
 
