@@ -185,10 +185,9 @@ $(document).ready(function() {
 	
 	// Removes an user from the database.
 	function removeUserDatabase() {
-		var usernameRef = db.ref().child('users').orderByChild('username').equalTo($('#inputCurrentUsername').val()).on('child_added', function(snapshot) {
-			db.ref().child('users/' + snapshot.key).remove();
+		var usernameRef = db.ref().child('users').orderByChild('username').equalTo($('#inputCurrentUsername').val()).once('value', function(snapshot) {
+			db.ref().child('users/' + Object.keys(snapshot.val())[0]).remove();
 		});
-		db.ref().off('child_added', usernameRef);
 	}
 	
 	
@@ -208,7 +207,7 @@ $(document).ready(function() {
 	
 	// Updates the information of an user in the database.
 	function updateUserDatabase() {
-		var usernameRef = db.ref().child('users').orderByChild('username').equalTo($('#inputNewUsername').val()).on('child_added', function(snapshot) {
+		var usernameRef = db.ref().child('users').orderByChild('username').equalTo($('#inputNewUsername').val()).once('value', function(snapshot) {
 			// We got the id of the user!
 			var update = {
 				username: $('#inputNewUsername').val(),
@@ -216,10 +215,9 @@ $(document).ready(function() {
 				lastName: $('#inputNewLastName').val(),
 				email: $('#inputNewEmail').val()
 			};
-			var userRef = db.ref('users/' + snapshot.key);
-			userRef.update(update);;
+			var userRef = db.ref('users/' + Object.keys(snapshot.val())[0]);
+			userRef.update(update);
 		});
-		db.ref().off('child_added', usernameRef);
 	}
 	
 	
